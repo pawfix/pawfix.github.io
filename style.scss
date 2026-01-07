@@ -1,0 +1,173 @@
+//:root {
+
+//}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f6f0d7;
+    background-size: cover;
+}
+main,
+footer,
+header {
+    margin: auto;
+    width: clamp(400px, 100vw, 1200px);
+}
+
+header,
+footer {
+    background-color: #c5d89d88;
+    display: flex;
+    padding: 1% 1.5%;
+    margin-top: 1%;
+    height: 7.5vh;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    img {
+        width: 10%;
+        transition: transform 0.3s ease-out;
+        -webkit-transition: transform 0.3s ease-out;
+        -moz-transition: transform 0.3s ease-out;
+        -ms-transition: transform 0.3s ease-out;
+        -o-transition: transform 0.3s ease-out;
+        margin-right: 1.5%;
+        aspect-ratio: 1/1;
+
+        &:hover {
+            transform: scale(1.2);
+            -webkit-transform: scale(1.2);
+            -moz-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+            -o-transform: scale(1.2);
+        }
+    }
+    h1 {
+        font-size: 5.5vh;
+        font-family: "Audiowide", "Sans serif";
+        text-align: center;
+        width: 77%;
+    }
+    a.github {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        width: 10%;
+        img {
+            height: 90%;
+            width: 90%;
+            aspect-ratio: 1/1;
+        }
+    }
+}
+footer {
+    margin-top: 0;
+    margin-bottom: 1%;
+    justify-content: center;
+    align-content: center;
+    h3 {
+        font-size: xx-large;
+        color: black;
+        text-decoration: none;
+    }
+}
+
+@keyframes shadowSpin {
+    0% {
+        filter: drop-shadow(30px 0px 10px #ffffff);
+        -webkit-filter: drop-shadow(30px 0px 10px #ffffff);
+    }
+    25% {
+        filter: drop-shadow(0px 30px 10px #ffffff);
+        -webkit-filter: drop-shadow(0px 30px 10px #ffffff);
+    }
+    50% {
+        filter: drop-shadow(-30px 0px 10px #ffffff);
+        -webkit-filter: drop-shadow(-30px 0px 10px #ffffff);
+    }
+    75% {
+        filter: drop-shadow(0px -30px 10px #ffffff);
+        -webkit-filter: drop-shadow(0px -30px 10px #ffffff);
+    }
+    100% {
+        filter: drop-shadow(30px 0px 10px #ffffff);
+        -webkit-filter: drop-shadow(30px 0px 10px #ffffff);
+    }
+}
+
+main {
+    background-color: rgba(166, 181, 142, 0.66);
+    section {
+        &.projectSection {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            div {
+                position: relative;
+                background-color: rgb(236, 230, 225);
+                outline: 5px solid black;
+                border-radius: 45px;
+                text-align: center;
+                -webkit-border-radius: 45px;
+                -moz-border-radius: 45px;
+                -ms-border-radius: 45px;
+                -o-border-radius: 45px;
+                width: 45%;
+                aspect-ratio: 1/1;
+                margin: 2.5%;
+                animation: shadowSpin 15s infinite linear;
+                -webkit-animation: shadowSpin 15s infinite linear;
+                transition: width 0.25s ease;
+                -webkit-transition: width 0.25s ease;
+                -moz-transition: width 0.25s ease;
+                -ms-transition: width 0.25s ease;
+                -o-transition: width 0.25s ease;
+                &:hover {
+                    animation-play-state: paused;
+                }
+                &:last-child {
+                    background-color: rgb(216, 210, 235);
+                }
+                @media screen and (max-width: 600px) {
+                    width: 90%;
+                    transition: width 0.25s ease;
+                    -webkit-transition: width 0.25s ease;
+                    -moz-transition: width 0.25s ease;
+                    -ms-transition: width 0.25s ease;
+                    -o-transition: width 0.25s ease;
+                }
+                h2 {
+                    font-size: xxx-large;
+                    margin: 5%;
+                }
+                p {
+                    width: 75%;
+                    margin: auto;
+                    font-size: x-large;
+                }
+                button {
+                    position: absolute; // new
+                    bottom: 5%; // 5% above the bottom
+                    left: 50%; // horizontally centered
+                    transform: translateX(-50%);
+                    width: 90%;
+                    height: 10%;
+                    border-radius: 25px;
+                    cursor: pointer;
+                    font-size: larger;
+                    font-family: "Audiowide", "Sans serif";
+                    transition: transform 0.25s ease-out;
+                    &:hover {
+                        transform: translateX(-50%) scale(1.05); // preserve centering
+                    }
+                }
+            }
+        }
+    }
+}
